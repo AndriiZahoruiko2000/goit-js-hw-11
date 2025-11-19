@@ -9,15 +9,35 @@ export function hideLoader() {
 }
 
 function createTemplateImage(image) {
-  return ` <li class="gallery-item">
-      <a class="gallery-link" href="${image.largeImageURL}"><img class="gallery-image" src="${image.webformatURL}" alt="${image.tags}" /></a>
+  return `
+    <li class="gallery-item">
+      <a class="gallery-link" href="${image.largeImageURL}">
+        <img class="gallery-image" src="${image.webformatURL}" alt="${image.tags}" />
+      </a>
+
       <ul class="image-params">
-      <p><b>Likes:</b>${image.likes}</p>
-      <p><b>Views:</b>${image.views}</p>
-      <p><b>Comments:</b>${image.comments}</p>
-      <p><b>Downloads:</b>${image.downloads}</p>
-    </ul>
-    </li>`;
+        <li class="image-params-item">
+          <span class="label">Likes</span>
+          <span class="value">${image.likes}</span>
+        </li>
+
+        <li class="image-params-item">
+          <span class="label">Views</span>
+          <span class="value">${image.views}</span>
+        </li>
+
+        <li class="image-params-item">
+          <span class="label">Comments</span>
+          <span class="value">${image.comments}</span>
+        </li>
+
+        <li class="image-params-item">
+          <span class="label">Downloads</span>
+          <span class="value">${image.downloads}</span>
+        </li>
+      </ul>
+    </li>
+  `;
 }
 
 function createTemplateImages(images) {

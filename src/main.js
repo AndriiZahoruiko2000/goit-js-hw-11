@@ -34,6 +34,7 @@ form.addEventListener('submit', e => {
     .then(response => {
       if (response.totalHits === 0) {
         return iziToast.error({
+          position: 'topRight',
           message:
             'Sorry, there are no images matching your search query. Please try again!',
         });
@@ -43,6 +44,7 @@ form.addEventListener('submit', e => {
     })
     .catch(error => {
       iziToast.error({
+        position: 'topRight',
         message: 'Something went wrong',
       });
     })
