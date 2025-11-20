@@ -1,5 +1,15 @@
+// Описаний у документації
+import SimpleLightbox from 'simplelightbox';
+// Додатковий імпорт стилів
+import 'simplelightbox/dist/simple-lightbox.min.css';
+
 const loader = document.querySelector('.loader');
 const list = document.querySelector('.gallery');
+
+let lightbox = new SimpleLightbox('.gallery a', {
+  captionsData: 'alt',
+  captionDelay: 1000,
+});
 
 export function showLoader() {
   loader.classList.remove('hidden');
@@ -47,6 +57,7 @@ function createTemplateImages(images) {
 export function createGallery(images) {
   const markup = createTemplateImages(images);
   list.innerHTML = markup;
+  lightbox.refresh();
 }
 export function clearGallery() {
   list.innerHTML = '';
